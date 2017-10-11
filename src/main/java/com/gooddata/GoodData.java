@@ -15,6 +15,7 @@ import com.gooddata.featureflag.FeatureFlagService;
 import com.gooddata.md.maintenance.ExportImportService;
 import com.gooddata.notification.NotificationService;
 import com.gooddata.projecttemplate.ProjectTemplateService;
+import com.gooddata.transform.TransformationService;
 import com.gooddata.util.ResponseErrorHandler;
 import com.gooddata.authentication.LoginPasswordAuthentication;
 import com.gooddata.warehouse.WarehouseService;
@@ -88,6 +89,7 @@ public class GoodData {
     private final ProjectTemplateService projectTemplateService;
     private final ExportService exportService;
     private final AuditEventService auditEventService;
+    private final TransformationService transformationService;
 
     /**
      * Create instance configured to communicate with GoodData Platform under user with given credentials.
@@ -224,6 +226,7 @@ public class GoodData {
         outputStageService = new OutputStageService(getRestTemplate(), settings);
         projectTemplateService = new ProjectTemplateService(getRestTemplate(), settings);
         auditEventService = new AuditEventService(getRestTemplate(), accountService, settings);
+        transformationService = new TransformationService(getRestTemplate());
     }
 
     static RestTemplate createRestTemplate(GoodDataEndpoint endpoint, HttpClient httpClient) {
@@ -488,6 +491,11 @@ public class GoodData {
     @Bean
     public AuditEventService getAuditEventService() {
         return auditEventService;
+    }
+
+    @Bean
+    public TransformationService getTransformationService() {
+        return this.transformationService;
     }
 
 }
