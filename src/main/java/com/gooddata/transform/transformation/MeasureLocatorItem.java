@@ -34,11 +34,4 @@ public class MeasureLocatorItem implements LocatorItem {
     public String toString() {
         return measureIdentifier;
     }
-//    @Override
-//    public Locator toLocator(List<Grid.MetricElement> metrics) {
-//        if (measureIdentifier + 1 > metrics.size() || measureIdentifier < 0) {
-//            throw new IllegalStateException("Invalid measureIdentifier");
-//        }
-//        return new Locator.MetricLocator(metrics.get(measureIdentifier).getUri());
-//    }
 }

@@ -50,28 +50,4 @@ public class AttributeSortItem implements SortItem {
     public String toString() {
         return GoodDataToStringBuilder.defaultToString(this);
     }
-
-//    @Override
-//    public Optional<Pair<Grid.Section, Sort.SortRule>> transformToSortRule(List<Grid.GridElement> columns,
-//                                                                           List<Grid.GridElement> rows,
-//                                                                           List<Grid.MetricElement> metrics,
-//                                                                           Supplier<Grid.Section> defaultSectionSupplier) {
-//        if (attributeIdentifier instanceof ObjUriQualifier) {
-//            ObjUriQualifier storedItemDescription = (ObjUriQualifier) attributeIdentifier;
-//            if (findMatch(columns, storedItemDescription)) {
-//                return Optional.of(new Pair<>(Grid.Section.COLUMNS, new Sort.AttributeSort(new Reference(storedItemDescription.getUri()), direction)));
-//            } else if (findMatch(rows, storedItemDescription)) {
-//                return Optional.of(new Pair<>(Grid.Section.ROWS, new Sort.AttributeSort(new Reference(storedItemDescription.getUri()), direction)));
-//            } else {
-//                return Optional.empty();
-//            }
-//        } else {
-//            throw new IllegalStateException("Item should be already transformed to uri based request");
-//        }
-//    }
-//
-//    private boolean findMatch(List<Grid.GridElement> elements, ObjUriQualifier _item) {
-//        return elements.stream()
-//                .anyMatch(gridElement -> gridElement.getUri().getTargetUriAsString().equalsIgnoreCase(_item.getUri()));
-//    }
 }
