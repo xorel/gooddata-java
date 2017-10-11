@@ -1,0 +1,107 @@
+{
+  "transformationResponse": {
+    "dimensions": [
+      {
+        "name": "x",
+        "headers": [
+          {
+            "type": "attribute",
+            "uri": "/gdc/md/FoodMartDemo/obj/124",
+            "name": "Account",
+            "labels": [
+              {
+                "id": "/gdc/md/FoodMartDemo/obj/124/elements?id=3200",
+                "value": "Cost of Goods Sold",
+                "type": "element"
+              },
+              {
+                "id": "/gdc/md/FoodMartDemo/obj/124/elements?id=3100",
+                "value": "Gross Sales",
+                "type": "element"
+              },
+              {
+                "id": "/gdc/md/FoodMartDemo/obj/124/elements?id=4400",
+                "value": "Lease",
+                "type": "element"
+              },
+              {
+                "id": "/gdc/md/FoodMartDemo/obj/124/elements?id=6000",
+                "value": "Salaries",
+                "type": "element"
+              }
+            ]
+          },
+          {
+            "type": "attribute",
+            "uri": "/gdc/md/FoodMartDemo/obj/113",
+            "name": "Account Type",
+            "labels": [
+              {
+                "id": "/gdc/md/FoodMartDemo/obj/113/elements?id=14",
+                "value": "Income",
+                "type": "element"
+              },
+              {
+                "id": "/gdc/md/FoodMartDemo/obj/113/elements?id=14",
+                "value": "Income",
+                "type": "element"
+              },
+              {
+                "id": "/gdc/md/FoodMartDemo/obj/113/elements?id=15",
+                "value": "Expense",
+                "type": "element"
+              },
+              {
+                "id": "/gdc/md/FoodMartDemo/obj/113/elements?id=15",
+                "value": "Expense",
+                "type": "element"
+              }
+            ]
+          },
+          {
+            "type": "metric",
+            "uri": "metricGroup",
+            "name": "metric",
+            "labels": [
+              {
+                "id": "0",
+                "value": "Accounting Amount [Sum]",
+                "type": "metric"
+              },
+              {
+                "id": "0",
+                "value": "Accounting Amount [Sum]",
+                "type": "metric"
+              },
+              {
+                "id": "0",
+                "value": "Accounting Amount [Sum]",
+                "type": "metric"
+              },
+              {
+                "id": "0",
+                "value": "Accounting Amount [Sum]",
+                "type": "metric"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "data": [
+      "-12958511.8099999",
+      "25315434.8199999",
+      "-2748323.76",
+      "-7252542.67"
+    ],
+    "size": [
+      4
+    ],
+    "offset": [
+      0
+    ],
+    "overallSize": [
+      4
+    ]
+  }
+}
