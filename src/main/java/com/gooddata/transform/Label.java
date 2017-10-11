@@ -17,7 +17,7 @@ public class Label {
     private final String type;
 
     @JsonCreator
-    public Label(@JsonProperty("id") String id, @JsonProperty("value") String value, @JsonProperty("type") String type) {
+    public Label(@JsonProperty("id") final String id, @JsonProperty("value") final String value, @JsonProperty("type") final String type) {
         this.id = id;
         this.value = value;
         this.type = type;
@@ -41,21 +41,21 @@ public class Label {
 
     public static class ElementLabel extends Label {
 
-        public ElementLabel(String id, String value) {
+        public ElementLabel(final String id, final String value) {
             super(id, value, "element");
         }
     }
 
     public static class MetricLabel extends Label {
 
-        public MetricLabel(String id, String value) {
+        public MetricLabel(final String id, final String value) {
             super(id, value, "metric");
         }
     }
 
     public static class TotalLabel extends Label {
 
-        public TotalLabel(String id) {
+        public TotalLabel(final String id) {
             super(id, null, "total");
         }
     }

@@ -16,22 +16,33 @@ import java.util.List;
 
 import static java.util.Arrays.asList;
 
+/**
+ * Filter of attribute filtering by NOT IN expression
+ */
 @JsonRootName(NegativeAttributeFilter.NAME)
 public class NegativeAttributeFilter extends AttributeFilter {
     static final String NAME = "negativeAttributeFilter";
-    private List<String> notIn;
+    private final List<String> notIn;
 
+    /**
+     * Creates new instance of given display form and not in list
+     * @param displayForm display form
+     * @param notIn list of not in elements
+     */
     @JsonCreator
-    public NegativeAttributeFilter(@JsonProperty("displayForm") ObjQualifier displayForm, @JsonProperty("notIn") List<String> notIn) {
+    public NegativeAttributeFilter(@JsonProperty("displayForm") final ObjQualifier displayForm,
+                                   @JsonProperty("notIn") final List<String> notIn) {
         super(displayForm);
         this.notIn = notIn;
     }
 
-    public NegativeAttributeFilter(final ObjQualifier displayForm, String... notIn) {
+    public NegativeAttributeFilter(final ObjQualifier displayForm, final String... notIn) {
         this(displayForm, asList(notIn));
     }
 
-    @JsonProperty
+    /**
+     * @return list of not in elements
+     */
     public List<String> getNotIn() {
         return notIn;
     }

@@ -17,19 +17,4 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         @JsonSubTypes.Type(value = MeasureSortItem.class, name = "measureSortItem")
 })
 public interface SortItem {
-//
-//    /**
-//     * Transformation of sort item into {@link Sort.SortRule} with specified {@link Grid.Section}.
-//     *
-//     * @param columns                list of adfs in columns
-//     * @param rows                   list of adfs in rows
-//     * @param metrics                list of metrics
-//     * @param defaultSectionSupplier in case of one dimensional execution (adding metric group as second dimension)
-//     * @return tuple containing {@link Grid.Section} and {@link Sort.SortRule} specifieng which section/dimension
-//     * should be sorted and how
-//     */
-//    Optional<Pair<Grid.Section, Sort.SortRule>> transformToSortRule(List<Grid.GridElement> columns,
-//                                                                    List<Grid.GridElement> rows,
-//                                                                    List<Grid.MetricElement> metrics,
-//                                                                    Supplier<Grid.Section> defaultSectionSupplier);
 }

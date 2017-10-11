@@ -28,8 +28,8 @@ public class TransformationResponse {
     public TransformationResponse() {
     }
 
-    public TransformationResponse(List<TransformedDimension> dimensions, Object data, List<Integer> size,
-                                  List<Integer> offset, List<Integer> overallSize) {
+    public TransformationResponse(final List<TransformedDimension> dimensions, final Object data, final List<Integer> size,
+                                  final List<Integer> offset, final List<Integer> overallSize) {
         this.dimensions = dimensions;
         this.data = data;
         this.size = size;

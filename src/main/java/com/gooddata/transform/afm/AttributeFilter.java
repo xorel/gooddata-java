@@ -5,19 +5,27 @@
  */
 package com.gooddata.transform.afm;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gooddata.transform.ObjQualifier;
 
 import static com.gooddata.util.Validate.notNull;
 
+/**
+ * Represents filter by attribute.
+ */
 public abstract class AttributeFilter implements FilterItem {
     private final ObjQualifier displayForm;
 
-    AttributeFilter(ObjQualifier displayForm) {
+    /**
+     * Creates new filter
+     * @param displayForm qualifier of attribute's display form to be filtered
+     */
+    AttributeFilter(final ObjQualifier displayForm) {
         this.displayForm = notNull(displayForm, "displayForm");
     }
 
-    @JsonProperty
+    /**
+     * @return filtered attribute's display form qualifier
+     */
     public ObjQualifier getDisplayForm() {
         return displayForm;
     }

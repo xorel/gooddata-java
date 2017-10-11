@@ -16,14 +16,23 @@ import java.util.List;
 
 import static java.util.Arrays.asList;
 
+/**
+ * Filter of attribute filtering by IN expression
+ */
 @JsonRootName(PositiveAttributeFilter.NAME)
 public class PositiveAttributeFilter extends AttributeFilter {
     static final String NAME = "positiveAttributeFilter";
 
     private final List<String> in;
 
+    /**
+     * Creates new instance of given display form and in list
+     * @param displayForm display form
+     * @param in list of in elements
+     */
     @JsonCreator
-    public PositiveAttributeFilter(@JsonProperty("displayForm") ObjQualifier displayForm, @JsonProperty("in") List<String> in) {
+    public PositiveAttributeFilter(@JsonProperty("displayForm") final ObjQualifier displayForm,
+                                   @JsonProperty("in") final List<String> in) {
         super(displayForm);
         this.in = in;
     }
@@ -32,7 +41,9 @@ public class PositiveAttributeFilter extends AttributeFilter {
         this(displayForm, asList(in));
     }
 
-    @JsonProperty
+    /**
+     * @return list of in elements
+     */
     public List<String> getIn() {
         return in;
     }

@@ -22,8 +22,8 @@ public class Header {
     private final List<Label> labels;
 
     @JsonCreator
-    public Header(@JsonProperty("type") String type, @JsonProperty("uri") String uri,
-                  @JsonProperty("name") String name, @JsonProperty("labels") List<Label> labels) {
+    public Header(@JsonProperty("type") final String type, @JsonProperty("uri") final String uri,
+                  @JsonProperty("name") final String name, @JsonProperty("labels") final List<Label> labels) {
         this.type = type;
         this.uri = uri;
         this.name = name;
@@ -52,14 +52,14 @@ public class Header {
 
     public static class MetricHeader extends Header {
 
-        public MetricHeader(String name, List<Label> labels) {
+        public MetricHeader(final String name, final List<Label> labels) {
             super("metric", METRIC_GROUP, name, labels);
         }
     }
 
     public static class AttributeHeader extends Header {
 
-        public AttributeHeader(String uri, String name, List<Label> labels) {
+        public AttributeHeader(final String uri, final String name, final List<Label> labels) {
             super("attribute", uri, name, labels);
         }
     }

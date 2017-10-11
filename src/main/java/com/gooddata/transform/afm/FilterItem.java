@@ -11,7 +11,7 @@ import com.gooddata.transform.ObjQualifier;
 import com.gooddata.transform.ObjUriQualifier;
 
 /**
- * Covers all the filters which can be used within AFM or Transformation
+ * Covers all the filters which can be used within AFM
  */
 @JsonSubTypes({
         @JsonSubTypes.Type(value = PositiveAttributeFilter.class, name = PositiveAttributeFilter.NAME),
@@ -22,8 +22,17 @@ import com.gooddata.transform.ObjUriQualifier;
 public interface FilterItem extends CompatibilityFilter {
 
 
+    /**
+     * Get qualifier of {@link com.gooddata.md.Obj} to which the filter relates.
+     * @return filtered object qualifier
+     */
     @JsonIgnore
     ObjQualifier getObjQualifier();
 
+    /**
+     * Copy itself using given uri qualifier
+     * @param qualifier qualifier to use for the new filter
+     * @return self copy with given qualifier
+     */
     FilterItem withObjUriQualifier(ObjUriQualifier qualifier);
 }

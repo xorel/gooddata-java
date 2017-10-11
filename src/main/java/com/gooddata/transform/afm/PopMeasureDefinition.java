@@ -13,6 +13,9 @@ import com.gooddata.util.GoodDataToStringBuilder;
 
 import static com.gooddata.transform.afm.PopMeasureDefinition.NAME;
 
+/**
+ * Definition of so called "period over period" measure
+ */
 @JsonRootName(NAME)
 public class PopMeasureDefinition implements MeasureDefinition {
 

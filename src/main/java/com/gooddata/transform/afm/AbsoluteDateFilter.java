@@ -19,28 +19,41 @@ import org.joda.time.LocalDate;
 
 import static com.gooddata.util.Validate.notNull;
 
+/**
+ * Represents {@link DateFilter} specifying exact from and to dates.
+ */
 @JsonRootName(AbsoluteDateFilter.NAME)
 public class AbsoluteDateFilter extends DateFilter {
     static final String NAME = "absoluteDateFilter";
-    private LocalDate from;
-    private LocalDate to;
+    private final LocalDate from;
+    private final LocalDate to;
 
+    /**
+     * Creates new filter instance
+     * @param dataSet qualifier of date dimension dataset
+     * @param from date from
+     * @param to date to
+     */
     @JsonCreator
-    public AbsoluteDateFilter(@JsonProperty("dataSet") ObjQualifier dataSet,
-                              @JsonProperty("from") @JsonDeserialize(using = GDDateDeserializer.class) LocalDate from,
-                              @JsonProperty("to") @JsonDeserialize(using = GDDateDeserializer.class) LocalDate to) {
+    public AbsoluteDateFilter(@JsonProperty("dataSet") final ObjQualifier dataSet,
+                              @JsonProperty("from") @JsonDeserialize(using = GDDateDeserializer.class) final LocalDate from,
+                              @JsonProperty("to") @JsonDeserialize(using = GDDateDeserializer.class) final LocalDate to) {
         super(dataSet);
         this.from = notNull(from, "from");
         this.to = notNull(to, "to");
     }
 
-    @JsonProperty
+    /**
+     * @return date from
+     */
     @JsonSerialize(using = GDDateSerializer.class)
     public LocalDate getFrom() {
         return from;
     }
 
-    @JsonProperty
+    /**
+     * @return date to
+     */
     @JsonSerialize(using = GDDateSerializer.class)
     public LocalDate getTo() {
         return to;

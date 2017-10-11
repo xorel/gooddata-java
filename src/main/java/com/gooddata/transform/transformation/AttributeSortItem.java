@@ -28,13 +28,13 @@ public class AttributeSortItem implements SortItem {
     private final String attributeIdentifier;
 
     @JsonCreator
-    public AttributeSortItem(@JsonProperty("direction") String direction,
-                             @JsonProperty("attributeIdentifier") String attributeIdentifier) {
+    public AttributeSortItem(@JsonProperty("direction") final String direction,
+                             @JsonProperty("attributeIdentifier") final String attributeIdentifier) {
         this.attributeIdentifier = attributeIdentifier;
         this.direction = direction;
     }
 
-    public AttributeSortItem(Direction direction, String attributeIdentifier) {
+    public AttributeSortItem(final Direction direction, final String attributeIdentifier) {
         this(notNull(direction, "direction").toString(), attributeIdentifier);
     }
 

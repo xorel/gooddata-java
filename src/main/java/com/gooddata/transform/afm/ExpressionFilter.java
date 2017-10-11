@@ -18,13 +18,16 @@ public class ExpressionFilter implements CompatibilityFilter {
     static final String NAME = "expression";
     private final String value;
 
+    /**
+     * Creates new instance
+     * @param value expression value
+     */
     @JsonCreator
-    public ExpressionFilter(@JsonProperty("value") String value) {
+    public ExpressionFilter(@JsonProperty("value") final String value) {
         this.value = value;
     }
 
-    @JsonProperty
-    public String getValue() {
+   public String getValue() {
         return value;
     }
 

@@ -5,6 +5,7 @@
  */
 package com.gooddata.transform
 
+import nl.jqno.equalsverifier.EqualsVerifier
 import spock.lang.Specification
 
 import static com.gooddata.util.ResourceUtils.readObjectFromResource
@@ -26,5 +27,10 @@ class ObjIdentifierQualifierTest extends Specification {
 
         then:
         identifierQualifier.identifier == 'df.id'
+    }
+
+    def "should verify equals"() {
+        expect:
+        EqualsVerifier.forClass(ObjIdentifierQualifier).verify()
     }
 }

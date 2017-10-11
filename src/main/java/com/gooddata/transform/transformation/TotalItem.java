@@ -29,14 +29,14 @@ public class TotalItem {
      */
     @JsonCreator
     public TotalItem(
-            @JsonProperty("measureIdentifier") String measureIdentifier, @JsonProperty("type") String type,
-            @JsonProperty("attributeIdentifier") String attributeIdentifier) {
+            @JsonProperty("measureIdentifier") final String measureIdentifier, @JsonProperty("type") final String type,
+            @JsonProperty("attributeIdentifier") final String attributeIdentifier) {
         this.measureIdentifier = notEmpty(measureIdentifier, "measureIdentifier");
         this.type = type;
         this.attributeIdentifier = notEmpty(attributeIdentifier, "attributeIdentifier");
     }
 
-    public TotalItem(String measureIdentifier, Total total, String attributeIdentifier) {
+    public TotalItem(final String measureIdentifier, final Total total, final String attributeIdentifier) {
         this(measureIdentifier, notNull(total.toString(), "total"), attributeIdentifier);
     }
 
@@ -70,10 +70,10 @@ public class TotalItem {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        TotalItem totalItem = (TotalItem) o;
+        final TotalItem totalItem = (TotalItem) o;
         return Objects.equals(measureIdentifier, totalItem.measureIdentifier) &&
                 Objects.equals(type, totalItem.type) &&
                 Objects.equals(attributeIdentifier, totalItem.attributeIdentifier);

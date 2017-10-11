@@ -38,15 +38,15 @@ public class Dimension {
 
     @JsonCreator
     public Dimension(
-            @JsonProperty("identifier") String identifier,
-            @JsonProperty("itemIdentifiers") List<String> itemIdentifiers,
-            @JsonProperty("totals") Set<TotalItem> totals) {
+            @JsonProperty("identifier") final String identifier,
+            @JsonProperty("itemIdentifiers") final List<String> itemIdentifiers,
+            @JsonProperty("totals") final Set<TotalItem> totals) {
         this.identifier = notEmpty(identifier, "identifier");
         this.itemIdentifiers = itemIdentifiers;
         this.totals = totals;
     }
 
-    public Dimension(String identifier, String... itemIdentifiers) {
+    public Dimension(final String identifier, final String... itemIdentifiers) {
         this(identifier, asList(itemIdentifiers), null);
     }
 
@@ -62,7 +62,7 @@ public class Dimension {
         return totals;
     }
 
-    public void setTotals(Set<TotalItem> totals) {
+    public void setTotals(final Set<TotalItem> totals) {
         this.totals = totals;
     }
 
@@ -74,7 +74,7 @@ public class Dimension {
         return this;
     }
 
-    public Set<TotalItem> findTotals(String attrIdentifier) {
+    public Set<TotalItem> findTotals(final String attrIdentifier) {
         final Predicate<TotalItem> filter = t -> notNull(attrIdentifier, "attrIdentifier").equals(t.getAttributeIdentifier());
 
         if (totals == null) {

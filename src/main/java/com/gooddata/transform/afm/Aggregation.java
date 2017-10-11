@@ -7,6 +7,9 @@ package com.gooddata.transform.afm;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
+/**
+ * Represents possible aggregation values at {@link SimpleMeasureDefinition}
+ */
 public enum Aggregation {
 
     SUM, COUNT, AVG, MIN, MAX, MEDIAN, RUNSUM;

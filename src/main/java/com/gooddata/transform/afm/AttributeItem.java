@@ -12,7 +12,7 @@ import com.gooddata.transform.ObjQualifier;
 import com.gooddata.util.GoodDataToStringBuilder;
 
 /**
- * Represents attribute withing {@link ObjectAfm}
+ * Represents attribute within {@link ObjectAfm}
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AttributeItem implements LocallyIdentifiable {
@@ -26,7 +26,7 @@ public class AttributeItem implements LocallyIdentifiable {
      * @param localIdentifier local identifier, unique within {@link ObjectAfm}
      */
     @JsonCreator
-    public AttributeItem(@JsonProperty("displayForm") ObjQualifier displayForm, @JsonProperty("localIdentifier") String localIdentifier) {
+    public AttributeItem(@JsonProperty("displayForm") final ObjQualifier displayForm, @JsonProperty("localIdentifier") final String localIdentifier) {
         this.localIdentifier = localIdentifier;
         this.displayForm = displayForm;
     }
@@ -35,7 +35,7 @@ public class AttributeItem implements LocallyIdentifiable {
      * Creates new instance
      * @param displayForm qualifier of {@link com.gooddata.md.AttributeDisplayForm} representing the attribute
      */
-    public AttributeItem(ObjQualifier displayForm) {
+    public AttributeItem(final ObjQualifier displayForm) {
         this.displayForm = displayForm;
     }
 
@@ -43,14 +43,13 @@ public class AttributeItem implements LocallyIdentifiable {
      * Sets local identifier, unique within {@link ObjectAfm}
      * @param localIdentifier local identifier
      */
-    public void setLocalIdentifier(String localIdentifier) {
+    public void setLocalIdentifier(final String localIdentifier) {
         this.localIdentifier = localIdentifier;
     }
 
     /**
      * @return local identifier, unique within {@link ObjectAfm}
      */
-    @JsonProperty
     public String getLocalIdentifier() {
         return localIdentifier;
     }
@@ -58,7 +57,6 @@ public class AttributeItem implements LocallyIdentifiable {
     /**
      * @return qualifier of {@link com.gooddata.md.AttributeDisplayForm} representing the attribute
      */
-    @JsonProperty
     public ObjQualifier getDisplayForm() {
         return displayForm;
     }

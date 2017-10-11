@@ -31,8 +31,16 @@ public interface MeasureDefinition {
     @JsonIgnore
     ObjQualifier getObjQualifier();
 
+    /**
+     * Copy itself using given uri qualifier
+     * @param qualifier qualifier to use for the new filter
+     * @return self copy with given qualifier
+     */
     MeasureDefinition withObjUriQualifier(ObjUriQualifier qualifier);
 
+    /**
+     * @return true if this definition represents ad hoc specified measure, false otherwise
+     */
     @JsonIgnore
     boolean isAdHoc();
 }

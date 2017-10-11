@@ -18,6 +18,4 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         @JsonSubTypes.Type(value = MeasureLocatorItem.class, name = "measureLocatorItem")
 })
 public interface LocatorItem {
-
-//   TODO Locator toLocator(List<Grid.MetricElement> metrics);
 }

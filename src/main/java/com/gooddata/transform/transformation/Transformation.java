@@ -27,9 +27,9 @@ public class Transformation {
 
     @JsonCreator
     public Transformation(
-            @JsonProperty("measures") List<MeasureDescription> measures,
-            @JsonProperty("dimensions") List<Dimension> dimensions,
-            @JsonProperty("sorts") List<SortItem> sorts) {
+            @JsonProperty("measures") final List<MeasureDescription> measures,
+            @JsonProperty("dimensions") final List<Dimension> dimensions,
+            @JsonProperty("sorts") final List<SortItem> sorts) {
         this.measures = measures;
         this.dimensions = dimensions;
         this.sorts = sorts;

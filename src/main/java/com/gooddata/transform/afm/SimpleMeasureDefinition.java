@@ -20,6 +20,9 @@ import static com.gooddata.transform.afm.SimpleMeasureDefinition.NAME;
 import static com.gooddata.util.Validate.notNull;
 import static java.util.Arrays.asList;
 
+/**
+ * Definition of simple measure
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(NAME)
 public class SimpleMeasureDefinition implements MeasureDefinition {
@@ -35,6 +38,13 @@ public class SimpleMeasureDefinition implements MeasureDefinition {
         this.item = item;
     }
 
+    /**
+     * Creates new definition
+     * @param item item which is measured
+     * @param aggregation additional aggregation applied
+     * @param showInPercent whether should be shown in percent
+     * @param filters additional filters applied
+     */
     @JsonCreator
     public SimpleMeasureDefinition(@JsonProperty("item") final ObjQualifier item,
                                    @JsonProperty("aggregation") final String aggregation,
@@ -63,7 +73,7 @@ public class SimpleMeasureDefinition implements MeasureDefinition {
 
     @Override
     public boolean isAdHoc() {
-        return aggregation != null || showInPercent != null || filters != null; // todo
+        return hasAggregation() || hasShowInPercent() || hasFilters();
     }
 
     @Override
@@ -109,11 +119,10 @@ public class SimpleMeasureDefinition implements MeasureDefinition {
     }
 
     public void addFilter(final FilterItem filter) {
-        notNull(filter, "filter");
         if (filters == null) {
             filters = new ArrayList<>();
         }
-        filters.add(filter);
+        filters.add(notNull(filter, "filter"));
     }
 
     @Override

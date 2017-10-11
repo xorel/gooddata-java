@@ -5,7 +5,6 @@ package com.gooddata.transform;
 
 import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.gooddata.auditevent.AuditEventPageRequest;
 import com.gooddata.util.GoodDataToStringBuilder;
 
 import java.util.Objects;
@@ -17,7 +16,7 @@ import java.util.Objects;
 public final class ObjUriQualifier implements ObjQualifier {
     private final String uri;
 
-    public ObjUriQualifier(String uri) {
+    public ObjUriQualifier(final String uri) {
         this.uri = uri;
     }
 
@@ -27,11 +26,11 @@ public final class ObjUriQualifier implements ObjQualifier {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
         if (this == o) return true;
         if (!(o instanceof ObjUriQualifier)) return false;
 
-        ObjUriQualifier that = (ObjUriQualifier) o;
+        final ObjUriQualifier that = (ObjUriQualifier) o;
         return Objects.equals(uri, that.uri);
     }
 

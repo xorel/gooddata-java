@@ -18,7 +18,7 @@ public class TransformedDimension {
     private final List<Header> headers;
 
     @JsonCreator
-    public TransformedDimension(@JsonProperty("name") String name, @JsonProperty("headers") List<Header> headers) {
+    public TransformedDimension(@JsonProperty("name") final String name, @JsonProperty("headers") final List<Header> headers) {
         this.name = name;
         this.headers = headers;
     }

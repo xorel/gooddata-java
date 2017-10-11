@@ -11,6 +11,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gooddata.util.GoodDataToStringBuilder;
 
+/**
+ * Represents measure within {@link ObjectAfm}
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MeasureItem implements LocallyIdentifiable {
 

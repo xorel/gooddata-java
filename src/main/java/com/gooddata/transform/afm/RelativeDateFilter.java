@@ -15,33 +15,41 @@ import com.gooddata.util.GoodDataToStringBuilder;
 import static com.gooddata.util.Validate.notEmpty;
 import static com.gooddata.util.Validate.notNull;
 
+/**
+ * Represents {@link DateFilter} specifying relative range of given granularity.
+ */
 @JsonRootName(RelativeDateFilter.NAME)
 public class RelativeDateFilter extends DateFilter {
     static final String NAME = "relativeDateFilter";
-    private final String granularity; // TODO some enum? day | week | etc...
+    private final String granularity;
     private final Integer from;
     private final Integer to;
 
+    /**
+     * Creates new instance
+     * @param dataSet qualifier of date dimension dataSet
+     * @param granularity granularity specified as type GDC date attribute type
+     * @param from from
+     * @param to to
+     */
     @JsonCreator
-    public RelativeDateFilter(@JsonProperty("dataSet") ObjQualifier dataSet, @JsonProperty("granularity") String granularity,
-                              @JsonProperty("from") Integer from, @JsonProperty("to") Integer to) {
+    public RelativeDateFilter(@JsonProperty("dataSet") final ObjQualifier dataSet,
+                              @JsonProperty("granularity") final String granularity,
+                              @JsonProperty("from") final Integer from, @JsonProperty("to") final Integer to) {
         super(dataSet);
         this.granularity = notEmpty(granularity, "granularity");
         this.from = notNull(from, "from");
         this.to = notNull(to, "to");
     }
 
-    @JsonProperty
     public String getGranularity() {
         return granularity;
     }
 
-    @JsonProperty
     public Integer getFrom() {
         return from;
     }
 
-    @JsonProperty
     public Integer getTo() {
         return to;
     }

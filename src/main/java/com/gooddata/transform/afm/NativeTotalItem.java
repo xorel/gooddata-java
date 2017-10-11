@@ -29,8 +29,8 @@ public class NativeTotalItem {
      */
     @JsonCreator
     public NativeTotalItem(
-            @JsonProperty("measureIdentifier") String measureIdentifier,
-            @JsonProperty("attributeIdentifiers") List<String> attributeIdentifiers) {
+            @JsonProperty("measureIdentifier") final String measureIdentifier,
+            @JsonProperty("attributeIdentifiers") final List<String> attributeIdentifiers) {
         this.measureIdentifier = notEmpty(measureIdentifier, "measureIdentifier");
         this.attributeIdentifiers = attributeIdentifiers == null ? Collections.emptyList() : attributeIdentifiers;
     }

@@ -29,17 +29,17 @@ public class MeasureSortItem implements SortItem {
 
     @JsonCreator
     public MeasureSortItem(
-            @JsonProperty("direction") String direction,
-            @JsonProperty("locators") List<LocatorItem> locators) {
+            @JsonProperty("direction") final String direction,
+            @JsonProperty("locators") final List<LocatorItem> locators) {
         this.direction = direction;
         this.locators = locators;
     }
 
-    public MeasureSortItem(Direction direction, List<LocatorItem> locators) {
+    public MeasureSortItem(final Direction direction, final List<LocatorItem> locators) {
         this(notNull(direction, "direction").toString(), locators);
     }
 
-    public MeasureSortItem(final Direction direction, LocatorItem... locators) {
+    public MeasureSortItem(final Direction direction, final LocatorItem... locators) {
         this(direction, asList(locators));
     }
 

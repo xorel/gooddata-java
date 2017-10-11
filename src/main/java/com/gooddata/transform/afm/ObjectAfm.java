@@ -50,7 +50,7 @@ public class ObjectAfm {
      * @return found attribute or throws exception
      */
     @JsonIgnore
-    public AttributeItem getAttribute(String localIdentifier) {
+    public AttributeItem getAttribute(final String localIdentifier) {
         return getIdentifiable(attributes, localIdentifier);
     }
 
@@ -60,7 +60,7 @@ public class ObjectAfm {
      * @return found measure or throws exception
      */
     @JsonIgnore
-    public MeasureItem getMeasure(String localIdentifier) {
+    public MeasureItem getMeasure(final String localIdentifier) {
         return getIdentifiable(measures, localIdentifier);
     }
 
@@ -133,7 +133,7 @@ public class ObjectAfm {
         return GoodDataToStringBuilder.defaultToString(this);
     }
 
-    private static <T extends LocallyIdentifiable> T getIdentifiable(List<T> toSearch, String localIdentifier) {
+    private static <T extends LocallyIdentifiable> T getIdentifiable(final List<T> toSearch, final String localIdentifier) {
         return Optional.ofNullable(toSearch)
                 .flatMap(a -> a.stream().filter(i -> Objects.equals(localIdentifier, i.getLocalIdentifier())).findFirst())
                 .orElseThrow(() -> new IllegalArgumentException(format("Item of localIdentifier=%s not found", localIdentifier)));

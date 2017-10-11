@@ -22,7 +22,7 @@ public class MeasureLocatorItem implements LocatorItem {
 
     @JsonCreator
     public MeasureLocatorItem(
-            @JsonProperty("measureIdentifier") String measureIdentifier) {
+            @JsonProperty("measureIdentifier") final String measureIdentifier) {
         this.measureIdentifier = measureIdentifier;
     }
 

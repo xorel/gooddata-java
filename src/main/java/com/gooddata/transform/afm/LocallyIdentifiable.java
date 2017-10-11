@@ -5,6 +5,12 @@
  */
 package com.gooddata.transform.afm;
 
+/**
+ * Marker interface for all locally identifiable objects having local identifier in AFM
+ */
 interface LocallyIdentifiable {
+    /**
+     * @return Value of local identifier
+     */
     String getLocalIdentifier();
 }
